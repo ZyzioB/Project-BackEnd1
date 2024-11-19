@@ -1,21 +1,18 @@
-const express = require('express');
-const connectDB = require('./database');
+const mongoose = require('mongoose');
 
-const app = express();
+// Funkcja do nawiązania połączenia z MongoDB
+const connectDB = async () => {
+    try {
+        await mongoose.connect('mongodb://localhost:27017/projekt1', {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        console.log('Connected to MongoDB');
+    } catch (err) {
+        console.error('Error connecting to MongoDB:', err.message);
+        process.exit(1); // Zamyka aplikację w razie błędu
+    }
+};
 
-// Połączenie z bazą danych
-connectDB();
-
-// Middleware (opcjonalne)
-app.use(express.json());
-
-// Endpoint testowy
-app.get('/', (req, res) => {
-    res.send('Server is running');
-});
-
-// Uruchomienie serwera
-const PORT = 5000;
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
+// Eksportowanie funkcji
+module.exports = connectDB;
