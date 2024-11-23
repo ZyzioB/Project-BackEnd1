@@ -1,2 +1,10 @@
-# Project-BackEnd1
-Exercise from university in BackEnd
+# node-api
+Instalacja:
+```
+npm i
+```
+
+Uruchomienie API:
+```
+npm start
+```
