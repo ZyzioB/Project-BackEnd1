@@ -8,3 +8,5 @@ export const Collections = {
 }
 
 export const JWT_SECRET = 'JWT_SECRET';
+
+//to jest komentarz
