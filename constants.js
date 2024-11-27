@@ -4,7 +4,9 @@ export const Roles = {
 }
 
 export const Collections = {
-  USERS: 'users'
+  USERS: 'users',
+  ITEMS: 'items',
+  ORDERS: 'orders',
 }
 
 export const JWT_SECRET = 'JWT_SECRET';
